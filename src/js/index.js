@@ -19,6 +19,15 @@ const input = prompt ("Escriba la entrada: ")
 
 const output = [];
 
+function validateLowercase (input)  {
+  if ([...input][0] === [...input][0].toLowerCase()) {
+    console.log('minuscula')
+  }
+  else {
+    console.log('mayuscula')
+  }
+}
+
 function encript ()  {
 
   [...input].forEach(element => {
