@@ -7,26 +7,22 @@ La letra "o" es convertida para "ober"
 La letra "u" es convertida para "ufat" */
 
 const keys = {
-    a: "enter" ,
-    b: "imes" ,
-    c: "ai" ,
+    e: "enter" ,
+    i: "imes" ,
+    a: "ai" ,
     o: "ober" ,
     u: "ufat"
 }
 
-const input = prompt ("Escriba la entrada: ")
+specialCharacter = new RegExp(["/", "*", "-" , "_"]) ;
 
+
+
+
+
+const input = prompt ("Escriba la entrada: ") // "fenterlimescimesdaidenters"
 
 const output = [];
-
-function validateLowercase (input)  {
-  if ([...input][0] === [...input][0].toLowerCase()) {
-    console.log('minuscula')
-  }
-  else {
-    console.log('mayuscula')
-  }
-}
 
 function encript ()  {
 
@@ -38,30 +34,46 @@ function encript ()  {
       output.push(element)
     }
     }
-  )}
+  )
 
-encript()
-
-console.log(output.join(''))
-
-
-function decript () {
-
-  let i = 0
-    output.forEach (e => {
-
-    let finded = Object.entries(keys).find(([key, value]) => value == e)
-        
-    if (finded){
-      //let [c, valor] = finded
-      output[i] = finded[0]
-    }
-    i++
-  })
-
+  
 }
 
-decript()
+function evaluate (input) {
+  if((validateLowercase(input) && validateCharacter(input)) && encript())
+}
 
+function validateLowercase (input)  {
+  return input === input.toLowerCase()
+}
+
+const validateCharacter = (input) => {
+  const regex = /^[a-zA-Z]+$/
+  return regex.test(input)
+}
+
+
+//encript()
+
+//console.log(output.join(''))
+
+function decript (input) {
+
+  const entries = Object.entries(keys)
+
+
+  entries.forEach(e => {
+
+    [key , value] = e
+    console.log("entrada" , e)
+      input = input.replaceAll(value , key)
+      console.log("final: " , input)
+
+  })
+
+  
+}
+
+//decript(input)
 
 console.log(output.join(''))
