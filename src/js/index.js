@@ -14,11 +14,6 @@ const keys = {
     u: "ufat"
 }
 
-specialCharacter = new RegExp(["/", "*", "-" , "_"]) ;
-
-
-
-
 
 const input = prompt ("Escriba la entrada: ") // "fenterlimescimesdaidenters"
 
@@ -36,11 +31,10 @@ function encript ()  {
     }
   )
 
-  
 }
 
 function evaluate (input) {
-  if((validateLowercase(input) && validateCharacter(input)) && encript())
+  validateLowercase(input) && validateCharacter(input) && encript()
 }
 
 function validateLowercase (input)  {

@@ -1,0 +1,140 @@
+body {
+    background-color: #F3F5FC;
+}
+
+main {
+    height: calc(100vh - 5rem);
+    width: 100vw;
+}
+
+.container {
+ box-sizing: border-box;
+ position: relative;
+ display: flex;
+ align-items: center;
+ height: 100%;
+
+}
+
+img {
+    width: 7.5rem;
+    height: 3rem;
+    margin: 2.5rem 0 0 2.5rem;
+    display:inline;
+    align-self: flex-start;
+}
+
+.result {
+    position:absolute;
+    top: 2rem;
+    right:2rem;
+    bottom: 2rem;
+    width: 25vw;
+    height: 90%;
+    max-width: calc(100% - 68% - 2rem);
+    border-radius: 32px;
+    background-color:  #FFF;
+
+/* shadow */
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+}
+
+.inputText {
+    position:absolute;
+    top:25%;
+    left:20%;
+    display: flex;
+    height: 20rem;
+    max-height: 40rem;
+    width: 30rem;
+    background: #F3F5FC;
+    border: none;
+    color:  #0A3871;
+    font-size: 2rem;
+    font-family: sans-serif;
+    line-height: 150%;
+    box-sizing: border-box;
+    resize: none;
+
+} 
+
+.inputText::placeholder {
+
+    color:  #0A3871;
+    font-size: 2rem;
+    font-family: sans-serif;
+    line-height: 150%;
+}
+
+.inputText:focus{
+    outline: none;
+}
+
+.button-container {
+    position: absolute;
+    left: 20%;
+    bottom: 2.5rem;
+    height: auto;
+    width: auto;
+}
+
+
+.warning {
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.warning img {
+    width: auto;
+    height: auto;
+    padding-right: 3px;
+    margin-left: 0;
+    box-sizing: border-box;
+}
+
+.warning h3 {
+    align-self: flex-end;
+}
+
+.encript-btn {
+    display: inline;
+    width: auto;
+    height: auto;
+
+}
+
+.button {
+    height: 4rem;
+    width: 15rem;
+    border-radius: 24px;
+    font-family: sans-serif;
+    padding: 1.5rem;
+}
+
+.button:hover {
+    cursor:pointer;
+}
+
+.button:active {
+    text-decoration: underline;
+}
+
+.button:first-child {
+    background-color:#0A3871;
+    color: white;
+}
+
+.button:first-child:hover {
+    background-color: #254e80;
+}
+
+.button:last-child {
+    color: #0A3871;
+}
+
+.button:last-child:hover {
+    background-color: #fefeff;;
+}

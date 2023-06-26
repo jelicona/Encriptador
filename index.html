@@ -5,20 +5,42 @@
         <meta name="description" content="Encriptador de texto" >
         <title>Encriptador</title>
         <link rel = "stylesheet" href = "./src/css/reset.css" >
+        <link rel="stylesheet" href="./src/css/Body/body.css" >
+        <link rel="stylesheet" href="./src/css/Header/header.css">
+        <link rel="stylesheet" href="./src/css/Footer/footer.css">
         <script  src="src/js/index.js"></script>
+        <link rel= "icon" href= "./src/img/Logo.png" >
+        
     </head>
     <body>
         <header>
-
+                <h1>Encriptador de texto</h1>
         </header>
         <main>
-            <table class="tabla" style="margin: 10px; border-collapse: collapse;">
-                <tr >
-                    <td style="padding: 10px;">1</td>
-                    <td style="padding: 10px;">2</td>
-                </tr>
+            <div class="container">
+                <img src="src/img/Logo.svg" alt="Logo alura" class ="imagen">
 
-            </table>
+                <textarea type="text" placeholder="Ingrese el texto aqui" class="inputText"></textarea>
+                 
+                <div class="button-container" >
+                    <div class="warning">
+                        <img src="./src/img/bi_exclamation-circle-fill.png"> 
+                        <h3>Solo letras minusculas y sin acento</h3>
+                    </div>
+                    <div class="encript-btn">
+                        <button type="button" class="button">Encriptar</button>
+                        <button type="button" class="button">Desencriptar</button>
+                    </div>
+                </div>
+
+                <section class="result">
+                </section>
+
+            </div>
+            
+            
+            
+            
         </main>
         <footer>
 
