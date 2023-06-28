@@ -6,7 +6,15 @@ La letra "a" es convertida para "ai"
 La letra "o" es convertida para "ober"
 La letra "u" es convertida para "ufat" */
 
-const keys = {
+/* Las "llaves" de encriptación que utilizaremos son las siguientes:
+
+La letra "e" es convertida para "enter"
+La letra "i" es convertida para "imes"
+La letra "a" es convertida para "ai"
+La letra "o" es convertida para "ober"
+La letra "u" es convertida para "ufat" */
+
+export const keys = {
     e: "enter" ,
     i: "imes" ,
     a: "ai" ,
@@ -15,11 +23,11 @@ const keys = {
 }
 
 
-const input = prompt ("Escriba la entrada: ") // "fenterlimescimesdaidenters"
 
-const output = [];
 
-function encript ()  {
+export const output = [];
+
+export function encript (input)  {
 
   [...input].forEach(element => {
     if (element in keys) {
@@ -33,41 +41,35 @@ function encript ()  {
 
 }
 
-function evaluate (input) {
-  validateLowercase(input) && validateCharacter(input) && encript()
+export function evaluate (input) {
+  validateLowercase(input) && validateCharacter(input) && encript(input)
 }
 
-function validateLowercase (input)  {
+export function validateLowercase (input)  {
   return input === input.toLowerCase()
 }
 
-const validateCharacter = (input) => {
-  const regex = /^[a-zA-Z]+$/
+export const validateCharacter = (input) => {
+  const regex = /^[a-zA-Z \n]+$/
   return regex.test(input)
 }
 
 
-//encript()
 
-//console.log(output.join(''))
+export function decrypt (input) {
 
-function decript (input) {
-
+  console.log("llego aqui funcion")
   const entries = Object.entries(keys)
 
-
   entries.forEach(e => {
-
-    [key , value] = e
-    console.log("entrada" , e)
+      const [key, value] = e
+      console.log("entrada" , e)
       input = input.replaceAll(value , key)
       console.log("final: " , input)
 
   })
 
-  
+ 
+  return [...input]
+
 }
-
-//decript(input)
-
-console.log(output.join(''))

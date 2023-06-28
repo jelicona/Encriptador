@@ -1,5 +1,6 @@
 <html5>
     <head>
+        <link rel= "icon" href= "./src/img/Logo.png" >
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Encriptador de texto" >
@@ -8,9 +9,7 @@
         <link rel="stylesheet" href="./src/css/Body/body.css" >
         <link rel="stylesheet" href="./src/css/Header/header.css">
         <link rel="stylesheet" href="./src/css/Footer/footer.css">
-        <script  src="src/js/index.js"></script>
-        <link rel= "icon" href= "./src/img/Logo.png" >
-        
+       
     </head>
     <body>
         <header>
@@ -20,20 +19,23 @@
             <div class="container">
                 <img src="src/img/Logo.svg" alt="Logo alura" class ="imagen">
 
-                <textarea type="text" placeholder="Ingrese el texto aqui" class="inputText"></textarea>
+                <textarea type="text" placeholder="Ingrese el texto aqui" class="inputText" data-text-input></textarea>
                  
                 <div class="button-container" >
-                    <div class="warning">
-                        <img src="./src/img/bi_exclamation-circle-fill.png"> 
+                    <div class="warning" data-warning>
+                        <img src="./src/img/bi_exclamation-circle-fill.png" data-img> 
                         <h3>Solo letras minusculas y sin acento</h3>
                     </div>
                     <div class="encript-btn">
-                        <button type="button" class="button">Encriptar</button>
-                        <button type="button" class="button">Desencriptar</button>
+                        <button type="submit" class="button" data-button-encrypt>Encriptar</button>
+                        <button type="submit" class="button" data-button-decrypt>Desencriptar</button>
                     </div>
                 </div>
 
                 <section class="result">
+                    <div class="div-result" data-display>                        
+                    </div>
+                    <button type="submit" class="copyBtn" data-button-copy>Copy</button>
                 </section>
 
             </div>
@@ -46,6 +48,8 @@
 
         </footer>
 
+        <script type="module" src="src/js/index.js"></script>
+        <script type="module" src="src/js/functionalities.js"></script>
         
     </body>
 </html5>
