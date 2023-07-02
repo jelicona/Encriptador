@@ -1,0 +1,37 @@
+@media (max-width: 1024px) {
+
+    main {
+        height: calc(100vh - 7rem);
+        width: 100vw;
+    }
+
+    .footer {
+        height: 2rem;
+    }
+
+    .socials a:active {
+    
+        filter: brightness(0.5)
+    }
+    
+    .socials a:nth-child(2):active {
+        filter:contrast(0.5);
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .footer p {
+        font-size: 0.8rem;
+    }
+
+    .socials a {
+        padding: 0;
+    }
+
+    .socials img {
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+}

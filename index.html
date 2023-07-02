@@ -9,15 +9,23 @@
         <link rel="stylesheet" href="./src/css/Body/body.css" >
         <link rel="stylesheet" href="./src/css/Header/header.css">
         <link rel="stylesheet" href="./src/css/Footer/footer.css">
+        <link rel="stylesheet" href="./src/css/Body/body-media.css">
+        <link rel="stylesheet" href="./src/css/Header/header-media.css">
+        <link rel="stylesheet" href="./src/css/Footer/footer-media.css">
+        
        
     </head>
     <body>
         <header>
+            <div class="header">
+                <img src="src/img/Logo.svg" alt="Logo alura" class ="logo">
                 <h1>Encriptador de texto</h1>
+            </div>
+            
         </header>
         <main>
             <div class="container">
-                <img src="src/img/Logo.svg" alt="Logo alura" class ="imagen">
+                
 
                 <textarea type="text" placeholder="Ingrese el texto aqui" class="inputText" data-text-input></textarea>
                  
@@ -32,10 +40,16 @@
                     </div>
                 </div>
 
-                <section class="result">
+                <section class="result" data-display-section>
+
+                    <div class="emptyArea" data-empty-area>
+                        <img src="./src/img/Muñeco.png">
+                        <h1>Ningún mensaje fue encontrado</h1>
+                        <h2>Ingresa el texto que deseas encriptar o desencriptar.</h2>
+                    </div>
                     <div class="div-result" data-display>                        
                     </div>
-                    <button type="submit" class="copyBtn" data-button-copy>Copy</button>
+                    
                 </section>
 
             </div>
@@ -44,8 +58,17 @@
             
             
         </main>
-        <footer>
+        <footer >
+            <div class="footer">
+                <p>Desafio #1 Alura-ONE Julian Licona &copy; 2023</p>
+                <p>Contacto: jelc9519@gmail.com</p>
+                
+                <div class="socials">
+                    <a href="https://www.linkedin.com/in/jedu-licona-202a2a253/" target="_blank"><img src="./src/img/icons8-linkedin-48.png" alt="LinkedIn"></a>
+                    <a href="https://github.com/jelicona/encriptador" target="_blank"><img src="./src/img/icons8-github-64.png" alt="Github"></a>               
+                </div>
 
+            </div>
         </footer>
 
         <script type="module" src="src/js/index.js"></script>

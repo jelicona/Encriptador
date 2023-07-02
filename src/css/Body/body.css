@@ -6,7 +6,7 @@ body {
 }
 
 main {
-    height: calc(100vh - 5rem);
+    height: calc(100vh - 8rem);
     width: 100vw;
 }
 
@@ -19,14 +19,6 @@ main {
 
 }
 
-img {
-    width: 7.5rem;
-    height: 3rem;
-    margin: 2.5rem 0 0 2.5rem;
-    display:inline;
-    align-self: flex-start;
-}
-
 .result {
     position:absolute;
     top: 2rem;
@@ -34,7 +26,6 @@ img {
     bottom: 2rem;
     width: 25vw;
     height: 90%;
-    max-width: calc(100% - 68% - 2rem);
     border-radius: 32px;
     background-color:  #FFF;
     display: flex;
@@ -45,7 +36,7 @@ img {
 }
 
 .div-result{
-    max-height: 85%;
+    max-height: 80%;
     max-width: 95%;
     word-wrap: break-word;
     display: flex;
@@ -65,7 +56,44 @@ img {
     line-height: 150%;
 }
 
+.emptyArea {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    font-family: 'Inter' ,sans-serif;
+}
+
+.emptyArea img {
+    height: 10rem;
+    width: 10rem;
+    margin: 0;
+    align-self: center;
+}
+
+.emptyArea h1 {
+    padding: 2rem 0;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    text-align: center;
+    color:#343A40;
+}
+
+.emptyArea h2 {
+    text-align: center;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    color:#495057;
+}
+
 .copyBtn {
+    position: absolute;
     height: 3rem;
     width: 12rem;
     border-radius: 24px;
@@ -193,3 +221,4 @@ img {
 .button:last-child:hover {
     background-color: #fefeff;;
 }
+

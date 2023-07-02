@@ -1,0 +1,39 @@
+.footer {
+    height: 3rem;
+    background-color: #dddfe6;
+    color: #404e81;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer p {
+    font-family: 'Inter' sans-serif;
+    text-decoration: solid;
+    font-size: 1.2rem;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    height: 2rem;
+}
+
+.socials a {
+    padding: 0 0.5rem;
+    justify-self: flex-end;
+}
+
+.socials img {
+    height: 2rem;
+    width: 2rem;
+}
+
+.socials a:hover {
+    
+    filter: brightness(0.5)
+}
+
+.socials a:nth-child(2):hover {
+    filter:contrast(0.5);
+}

@@ -4,7 +4,8 @@ const encryptBtn = document.querySelector("[data-button-encrypt]")
 const decryptBtn = document.querySelector("[data-button-decrypt]")
 const displayArea = document.querySelector("[data-display]") 
 const warning = document.querySelector("[data-warning]")
-const copyBtn = document.querySelector("[data-button-copy]")
+const displaySection = document.querySelector("[data-display-section]")
+const emptyArea = document.querySelector("[data-empty-area]")
 
 
 const input = document.querySelector("[data-text-input]")
@@ -37,13 +38,16 @@ encryptBtn.addEventListener("click" , (e) => {
 
         index.output.length !=0 
         ? (() => {
-            validations(),
+            validations()
+            removeEmptyArea(emptyArea)
+            displayText(output)
+            displayCopyBtn(output.join(''), displaySection)
             input.value = ""
             
         }) ()
         : (validations());
     
-        displayText(output)
+
     }
 
 })
@@ -53,19 +57,56 @@ decryptBtn.addEventListener("click" , (e) => {
     
     e.preventDefault;
    
-    const decryptedText = index.decrypt(output.join(''))
+    if (input.value.trim()){
+        
+        const decryptedText = index.decrypt(input.value)
 
-    displayText(decryptedText)
-})
-
-
-
-copyBtn.addEventListener("click" , () => {
-    const originalText = copyBtn.textContent
-    copyBtn.textContent = "Copied!"
-    timeoutId = setTimeout(() => {
-        copyBtn.textContent = originalText
-    } , 500)
-
+        index.validateCharacter(input.value) && index.validateLowercase(input.value)
+        ? (() => {
+            validations(),
+            removeEmptyArea(emptyArea),
+            displayText(decryptedText),
+            displayCopyBtn(decryptedText.join(''), displaySection),
+            input.value = ""
+            
+        }) ()
+        : (validations());
+    
+    }
     
 })
+
+
+function displayCopyBtn (text, displaySection) {
+
+    const copyBtn = document.createElement("button")
+    copyBtn.classList.add("copyBtn")
+    copyBtn.textContent = "copiar"
+    
+
+    displaySection.appendChild(copyBtn)
+
+    copyText (copyBtn, text)
+}
+
+function copyText (button, text) {
+    button.addEventListener("click" , (e) => {
+        e.preventDefault;
+        const originalText = button.textContent
+        button.textContent = "Copiado!"
+        setTimeout(() => {
+            if(button.textContent === "Copiado!")
+                {button.textContent = originalText}
+        } , 800)
+
+        navigator.clipboard.writeText(text)
+        .then(() => console.log("copied"))
+        .catch(err => console.log("error al copiar"))
+    })
+    
+}
+
+
+function removeEmptyArea (Area) {
+    Area.style.display = "none"
+}
